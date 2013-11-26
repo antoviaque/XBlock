@@ -6,6 +6,7 @@ This code is in the Workbench layer.
 
 from collections import namedtuple
 
+from django.conf import settings
 from xblock.core import XBlock
 
 from .runtime import WorkbenchRuntime
@@ -54,4 +55,5 @@ def init_scenarios():
 
     # Get all the XBlock classes, and add their scenarios.
     for class_name, cls in XBlock.load_classes():
-        add_class_scenarios(class_name, cls)
+        if not settings.LOAD_SCENARIOS_FROM or class_name in settings.LOAD_SCENARIOS_FROM:
+            add_class_scenarios(class_name, cls)
