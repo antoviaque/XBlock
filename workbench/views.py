@@ -52,7 +52,7 @@ def get_student_id(request):
 
 def index(_request):
     """Render `index.html`"""
-    the_scenarios = sorted(SCENARIOS.items())
+    the_scenarios = sorted(SCENARIOS.items(), key=lambda sc: sc[1].description)
     return render_to_response('index.html', {
         'scenarios': [(desc, scenario.description) for desc, scenario in the_scenarios]
     })
