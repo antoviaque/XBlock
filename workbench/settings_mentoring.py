@@ -1,6 +1,6 @@
 from settings import *
 
-LOAD_SCENARIOS_FROM = ('mentoring', 'mentoring-table')
+LOAD_SCENARIOS_FROM = ('mentoring', 'mentoring-table', 'mentoring-dataexport')
 INSTALLED_APPS += ('mentoring',)
 
 DATABASES['default']['NAME'] = 'workbench.sqlite'
