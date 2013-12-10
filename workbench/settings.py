@@ -162,3 +162,5 @@ LOGGING = {
         },
     }
 }
+
+LOAD_SCENARIOS_FROM = None
