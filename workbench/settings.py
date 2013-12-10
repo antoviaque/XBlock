@@ -1,5 +1,9 @@
 """Django settings for workbench project."""
 
+import os
+
+ppath = lambda x: os.path.join(os.path.dirname(os.path.dirname(__file__)), x)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -113,8 +117,8 @@ ROOT_URLCONF = 'workbench.urls'
 WSGI_APPLICATION = 'workbench.wsgi.application'
 
 TEMPLATE_DIRS = (
-    'workbench/templates',
-    'xblock/templates',
+    ppath('workbench/templates'),
+    ppath('xblock/templates'),
 )
 
 INSTALLED_APPS = (
